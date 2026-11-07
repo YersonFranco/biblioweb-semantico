@@ -1,0 +1,31 @@
+/* ==========================================================================
+   BiblioWeb - css/estilos.css
+   Ajustes visuales propios del proyecto (portadas, carrusel, tablas del
+   panel). Aquí va lo que no es un componente reutilizable.
+   ========================================================================== */
+
+/* Portadas del catálogo */
+.book-cover {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px var(--bw-shadow);
+}
+
+/* Carrusel de la página de inicio */
+.carousel-item img {
+  object-fit: cover;
+}
+
+/* Miniaturas de portada dentro de las tablas del panel de administración */
+.table img.rounded {
+  box-shadow: 0 2px 6px var(--bw-shadow);
+}
+
+/* Botón del selector de tema (sol / luna) */
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BiblioWeb - Acceso de Administrador</title>
+
+  <!-- Bootstrap 5.3 CSS por CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Hoja de Estilos Institucional -->
+  <link href="../css/base.css" rel="stylesheet">
+  <link href="../css/componentes.css" rel="stylesheet">
+  <link href="../css/estilos.css" rel="stylesheet">
+
+  <!-- Tema claro/oscuro (en el head para evitar parpadeo) -->
+  <script src="../js/tema.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Enlace de accesibilidad: solo se ve al navegar con teclado -->
+  <a class="visually-hidden-focusable" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- ==================== ENCABEZADO DEL SITIO ==================== -->
+  <!-- sticky-top va en el header (no en el nav) para que la barra se mantenga fija al hacer scroll -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-biblioweb py-2" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold text-white fs-4" href="../index.html">
+          <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+          BiblioWeb
+        </a>
+        <div class="d-flex align-items-center gap-3 ms-auto">
+          <button id="theme-toggle" class="btn btn-outline-light rounded-circle p-2 lh-1" style="width: 38px; height: 38px;" title="Alternar tema" type="button">
+            ☀️
+          </button>
+          <a href="../index.html" class="btn btn-outline-light btn-sm">Volver al Inicio</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================== FORMULARIO DE ACCESO ==================== -->
+  <main class="container my-auto py-5" id="contenido-principal">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-5">
+
+        <section class="card card-biblioweb p-4 p-md-5 shadow-sm" aria-labelledby="titulo-login">
+
+          <header class="text-center mb-4">
+            <span class="badge bg-secondary-subtle text-secondary px-3 py-1 mb-2">PORTAL RESTRINGIDO</span>
+            <h1 class="h2 font-serif fw-bold" id="titulo-login">Acceso de Administrador</h1>
+            <p class="text-secondary small">Autenticación para archiveros y personal de gestión de sala</p>
+          </header>
+
+          <!-- Alerta de Error Dinámica -->
+          <div id="login-error-msg" class="alert alert-danger d-none py-2 px-3 small" role="alert">
+            Correo o contraseña incorrectos
+          </div>
+
+          <!-- Formulario -->
+          <form id="form-login" aria-labelledby="titulo-login">
+            <div class="mb-3">
+              <label for="email" class="form-label small fw-bold">Correo Electrónico Institucional</label>
+              <input type="email" class="form-control" id="email" placeholder="admin@biblioweb.test" required autocomplete="email">
+            </div>
+
+            <div class="mb-4">
+              <label for="password" class="form-label small fw-bold">Contraseña de Seguridad</label>
+              <input type="password" class="form-control" id="password" placeholder="••••••••" required autocomplete="current-password">
+            </div>
+
+            <button type="submit" class="btn btn-verde w-100 py-2 mb-3">
+              Ingresar al Sistema
+            </button>
+          </form>
+
+          <!-- Credenciales de Prueba -->
+          <aside class="card-biblioweb-sec p-3 rounded-2 small mt-3" aria-label="Cuenta de prueba">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <strong>Cuenta de prueba:</strong>
+              <button id="btn-cargar-credenciales" type="button" class="btn btn-sm btn-outline-dark py-0 px-2" style="font-size: 0.75rem;">
+                Cargar datos
+              </button>
+            </div>
+            <p class="text-secondary mb-0">Usuario: <code>admin@biblioweb.test</code></p>
+            <p class="text-secondary mb-0">Clave: <code>Admin123</code></p>
+          </aside>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== PIE DE PÁGINA ==================== -->
+  <footer class="footer-biblioweb py-3 mt-auto">
+    <div class="container text-center small text-white-50">
+      <p class="mb-0">BiblioWeb · Sistema Cívico de Archivo Municipal · Acceso Autorizado</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 Bundle JS por CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Control de Tema y Autenticación -->
+  <script src="../js/auth.js"></script>
+</body>
+</html>

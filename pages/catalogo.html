@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BiblioWeb - Catálogo Bibliográfico</title>
+
+  <!-- Bootstrap 5.3 CSS por CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Hoja de Estilos Institucional -->
+  <link href="../css/base.css" rel="stylesheet">
+  <link href="../css/componentes.css" rel="stylesheet">
+  <link href="../css/estilos.css" rel="stylesheet">
+
+  <!-- Tema claro/oscuro (en el head para evitar parpadeo) -->
+  <script src="../js/tema.js"></script>
+</head>
+<body>
+
+  <!-- Enlace de accesibilidad: solo se ve al navegar con teclado -->
+  <a class="visually-hidden-focusable" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- ==================== ENCABEZADO DEL SITIO ==================== -->
+  <!-- sticky-top va en el header (no en el nav) para que la barra se mantenga fija al hacer scroll -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-biblioweb py-2" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold text-white fs-4" href="../index.html">
+          <svg aria-hidden="true" fill="none" height="28" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="28">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          BiblioWeb
+        </a>
+        <button aria-controls="navMenu" aria-expanded="false" aria-label="Navegación" class="navbar-toggler" data-bs-target="#navMenu" data-bs-toggle="collapse" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a aria-current="page" class="nav-link active" href="catalogo.html">Catálogo de Libros</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#horarios">Horarios &amp; Contacto</a></li>
+          </ul>
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-outline-light rounded-circle p-2 lh-1" id="theme-toggle" style="width: 38px; height: 38px;" title="Alternar tema" type="button">
+              ☀️
+            </button>
+            <a class="btn btn-terracota px-3 py-1" href="login.html">Acceso Admin</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+  <main class="container mb-5" id="contenido-principal">
+
+    <!-- ==================== ENCABEZADO DEL CATÁLOGO ==================== -->
+    <header class="my-5">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 border-bottom pb-4">
+        <div>
+          <span class="text-uppercase fw-bold text-secondary small">Acervo Bibliográfico · Red Cívica</span>
+          <h1 class="font-serif display-5 fw-bold mb-1">Catálogo General de Libros</h1>
+          <p class="text-secondary mb-0">Descubre las 6 obras destacadas disponibles para consulta en sala y préstamo a domicilio.</p>
+        </div>
+        <div class="card-biblioweb-sec px-3 py-2 text-center">
+          <div class="fw-bold fs-4 text-primary">6</div>
+          <small class="text-secondary">Obras Registradas</small>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== CUADRÍCULA DE 6 TARJETAS ==================== -->
+    <section aria-labelledby="titulo-listado">
+      <h2 class="visually-hidden" id="titulo-listado">Listado de libros disponibles</h2>
+
+      <ul class="row g-4 list-unstyled mb-0">
+
+        <!-- LIBRO 1: NARRATIVA -->
+        <li class="col-md-6 col-lg-4">
+          <article class="card card-biblioweb h-100 p-3 d-flex flex-column">
+            <img alt="Portada de Cien Años de Soledad de Gabriel García Márquez" class="book-cover mb-3" src="../img/libros/cien-anos-de-soledad.svg">
+            <div class="mb-2">
+              <span class="badge badge-narrativa px-2 py-1">Narrativa</span>
+            </div>
+            <h2 class="h4 font-serif fw-bold mb-1">Cien Años de Soledad</h2>
+            <p class="text-secondary fw-medium mb-2 small">Gabriel García Márquez</p>
+            <p class="text-secondary small flex-grow-1">
+              La obra cumbre del realismo mágico sobre la legendaria saga de la familia Buendía en el mítico pueblo de Macondo.
+            </p>
+            <footer class="border-top pt-3 mt-2 d-flex justify-content-between align-items-center">
+              <span class="badge bg-success-subtle text-success">Disponible</span>
+              <button class="btn btn-terracota btn-sm" data-bs-target="#modalPrestamo" data-bs-toggle="modal" data-libro="Cien Años de Soledad" type="button">
+                Solicitar préstamo
+              </button>
+            </footer>
+          </article>
+        </li>
+
+        <!-- LIBRO 2: NARRATIVA -->
+        <li class="col-md-6 col-lg-4">
+          <article class="card card-biblioweb h-100 p-3 d-flex flex-column">
+            <img alt="Portada de El Nombre de la Rosa de Umberto Eco" class="book-cover mb-3" src="../img/libros/el-nombre-de-la-rosa.svg">
+            <div class="mb-2">
+              <span class="badge badge-narrativa px-2 py-1">Narrativa</span>
+            </div>
+            <h2 class="h4 font-serif fw-bold mb-1">El Nombre de la Rosa</h2>
+            <p class="text-secondary fw-medium mb-2 small">Umberto Eco</p>
+            <p class="text-secondary small flex-grow-1">
+              Un fascinante misterio detectivesco en una abadía benedictina medieval que custodia manuscritos prohibidos.
+            </p>
+            <footer class="border-top pt-3 mt-2 d-flex justify-content-between align-items-center">
+              <span class="badge bg-success-subtle text-success">Disponible</span>
+              <button class="btn btn-terracota btn-sm" data-bs-target="#modalPrestamo" data-bs-toggle="modal" data-libro="El Nombre de la Rosa" type="button">
+                Solicitar préstamo
+              </button>
+            </footer>
+          </article>
+        </li>
+
+        <!-- LIBRO 3: TECNOLOGÍA -->
+        <li class="col-md-6 col-lg-4">
+          <article class="card card-biblioweb h-100 p-3 d-flex flex-column">
+            <img alt="Portada de Diseño de Sistemas Distribuidos de Brendan Burns" class="book-cover mb-3" src="../img/libros/sistemas-distribuidos.svg">
+            <div class="mb-2">
+              <span class="badge badge-tecnologia px-2 py-1">Tecnología</span>
+            </div>
+            <h2 class="h4 font-serif fw-bold mb-1">Diseño de Sistemas Distribuidos</h2>
+            <p class="text-secondary fw-medium mb-2 small">Brendan Burns</p>
+            <p class="text-secondary small flex-grow-1">
+              Patrones y paradigmas esenciales para arquitecturas de software modernas, contenedores y microservicios escalables.
+            </p>
+            <footer class="border-top pt-3 mt-2 d-flex justify-content-between align-items-center">
+              <span class="badge bg-success-subtle text-success">Disponible</span>
+              <button class="btn btn-terracota btn-sm" data-bs-target="#modalPrestamo" data-bs-toggle="modal" data-libro="Diseño de Sistemas Distribuidos" type="button">
+                Solicitar préstamo
+              </button>
+            </footer>
+          </article>
+        </li>
+
+        <!-- LIBRO 4: TECNOLOGÍA -->
+        <li class="col-md-6 col-lg-4">
+          <article class="card card-biblioweb h-100 p-3 d-flex flex-column">
+            <img alt="Portada de Clean Code de Robert C. Martin" class="book-cover mb-3" src="../img/libros/clean-code.svg">
+            <div class="mb-2">
+              <span class="badge badge-tecnologia px-2 py-1">Tecnología</span>
+            </div>
+            <h2 class="h4 font-serif fw-bold mb-1">Clean Code: Manual de Estilo Ágil</h2>
+            <p class="text-secondary fw-medium mb-2 small">Robert C. Martin</p>
+            <p class="text-secondary small flex-grow-1">
+              Guía canónica de buenas prácticas para desarrolladores que buscan escribir software legible, mantenible y robusto.
+            </p>
+            <footer class="border-top pt-3 mt-2 d-flex justify-content-between align-items-center">
+              <span class="badge bg-warning-subtle text-warning-emphasis">Último Ejemplar</span>
+              <button class="btn btn-terracota btn-sm" data-bs-target="#modalPrestamo" data-bs-toggle="modal" data-libro="Clean Code: Manual de Estilo Ágil" type="button">
+                Solicitar préstamo
+              </button>
+            </footer>
+          </article>
+        </li>
+
+        <!-- LIBRO 5: CIENCIA -->
+        <li class="col-md-6 col-lg-4">
+          <article class="card card-biblioweb h-100 p-3 d-flex flex-column">
+            <img alt="Portada de Cosmos de Carl Sagan" class="book-cover mb-3" src="../img/libros/cosmos.svg">
+            <div class="mb-2">
+              <span class="badge badge-ciencia px-2 py-1">Ciencia</span>
+            </div>
+            <h2 class="h4 font-serif fw-bold mb-1">Cosmos</h2>
+            <p class="text-secondary fw-medium mb-2 small">Carl Sagan</p>
+            <p class="text-secondary small flex-grow-1">
+              Un viaje divulgativo magistral por quince mil millones de años de evolución cósmica, astronomía y civilización humana.
+            </p>
+            <footer class="border-top pt-3 mt-2 d-flex justify-content-between align-items-center">
+              <span class="badge bg-success-subtle text-success">Disponible</span>
+              <button class="btn btn-terracota btn-sm" data-bs-target="#modalPrestamo" data-bs-toggle="modal" data-libro="Cosmos" type="button">
+                Solicitar préstamo
+              </button>
+            </footer>
+          </article>
+        </li>
+
+        <!-- LIBRO 6: CIENCIA -->
+        <li class="col-md-6 col-lg-4">
+          <article class="card card-biblioweb h-100 p-3 d-flex flex-column">
+            <img alt="Portada de El Gen Egoísta de Richard Dawkins" class="book-cover mb-3" src="../img/libros/el-gen-egoista.svg">
+            <div class="mb-2">
+              <span class="badge badge-ciencia px-2 py-1">Ciencia</span>
+            </div>
+            <h2 class="h4 font-serif fw-bold mb-1">El Gen Egoísta</h2>
+            <p class="text-secondary fw-medium mb-2 small">Richard Dawkins</p>
+            <p class="text-secondary small flex-grow-1">
+              Una perspectiva biológica revolucionaria sobre la evolución natural vista desde el prisma de la información genética.
+            </p>
+            <footer class="border-top pt-3 mt-2 d-flex justify-content-between align-items-center">
+              <span class="badge bg-success-subtle text-success">Disponible</span>
+              <button class="btn btn-terracota btn-sm" data-bs-target="#modalPrestamo" data-bs-toggle="modal" data-libro="El Gen Egoísta" type="button">
+                Solicitar préstamo
+              </button>
+            </footer>
+          </article>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ==================== MODAL DE PRÉSTAMO (BOOTSTRAP 5) ==================== -->
+    <div aria-hidden="true" aria-labelledby="modalPrestamoLabel" class="modal fade" id="modalPrestamo" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content card-biblioweb">
+          <header class="modal-header border-bottom">
+            <h2 class="modal-title h5 font-serif fw-bold" id="modalPrestamoLabel">Solicitud de Préstamo de Libro</h2>
+            <button aria-label="Cerrar" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+          </header>
+          <form id="form-prestamo">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label small fw-bold" for="modal-libro-titulo">Libro Seleccionado</label>
+                <input class="form-control bg-body-secondary" id="modal-libro-titulo" readonly type="text" value="Cien Años de Soledad">
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-bold" for="nombre-solicitante">Nombre Completo *</label>
+                <input class="form-control" id="nombre-solicitante" placeholder="Ej. Elena Valenzuela Torres" required type="text">
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-bold" for="correo-solicitante">Correo Electrónico Institucional / Personal *</label>
+                <input class="form-control" id="correo-solicitante" placeholder="elena.v@correo.test" required type="email">
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-bold" for="comentario-solicitante">Comentario u Observación (Opcional)</label>
+                <textarea class="form-control" id="comentario-solicitante" placeholder="Motivo de la solicitud, plazo especial o consulta bibliográfica..." rows="3"></textarea>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" id="terminos-prestamo" required type="checkbox">
+                <label class="form-check-label small text-secondary" for="terminos-prestamo">
+                  Acepto el reglamento general de custodia y plazo de devolución de 15 días renovables de la Red Cívica. *
+                </label>
+              </div>
+            </div>
+            <footer class="modal-footer border-top">
+              <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Cancelar</button>
+              <button class="btn btn-terracota" type="submit">Confirmar Solicitud</button>
+            </footer>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==================== PIE DE PÁGINA ==================== -->
+  <footer class="footer-biblioweb py-4 mt-5">
+    <div class="container text-center small text-white-50">
+      <p class="mb-0">© 2024 BiblioWeb. Catálogo General de Fondos Bibliográficos. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 Bundle JS por CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/auth.js"></script>
+  <!-- Script interactivo mínimo para poblar título en el modal -->
+  <script>
+    const modalPrestamo = document.getElementById('modalPrestamo');
+    if (modalPrestamo) {
+      modalPrestamo.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const libro = button ? button.getAttribute('data-libro') : 'Cien Años de Soledad';
+        const libroInput = document.getElementById('modal-libro-titulo');
+        if (libroInput && libro) {
+          libroInput.value = libro;
+        }
+      });
+
+      document.getElementById('form-prestamo').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('¡Solicitud registrada correctamente! Recibirás la confirmación en tu correo.');
+        const modal = bootstrap.Modal.getInstance(modalPrestamo);
+        if (modal) modal.hide();
+        this.reset();
+      });
+    }
+  </script>
+</body>
+</html>

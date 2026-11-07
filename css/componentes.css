@@ -1,0 +1,276 @@
+/* ==========================================================================
+   BiblioWeb - css/componentes.css
+   Componentes compartidos por todas las páginas: navbar, footer, tarjetas,
+   botones, badges, formularios, tablas y modales.
+   Los colores vienen de las variables definidas en base.css, así que todo
+   cambia solo al alternar data-bs-theme="light" / "dark".
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Navbar
+   -------------------------------------------------------------------------- */
+.navbar-biblioweb {
+  background-color: var(--bw-navbar-bg) !important;
+  border-bottom: 3px solid var(--bw-navbar-border);
+  box-shadow: 0 4px 16px var(--bw-shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-biblioweb .nav-link {
+  color: var(--bw-navbar-link) !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-biblioweb .nav-link:hover,
+.navbar-biblioweb .nav-link.active {
+  color: var(--bw-navbar-link-hover) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Pie de página
+   -------------------------------------------------------------------------- */
+.footer-biblioweb {
+  background-color: var(--bw-navbar-bg);
+  color: var(--bw-navbar-link);
+  border-top: 3px solid var(--bw-navbar-border);
+}
+
+.footer-biblioweb a {
+  color: var(--color-tan);
+  text-decoration: none;
+}
+
+.footer-biblioweb a:hover {
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Tarjetas y paneles
+   -------------------------------------------------------------------------- */
+.card-biblioweb {
+  background-color: var(--bw-surface-card);
+  border: 1px solid var(--bw-borde);
+  border-radius: 8px;
+  color: var(--bw-text-main);
+  box-shadow: 0 4px 14px var(--bw-shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-biblioweb:hover {
+  border-color: var(--bw-accent);
+}
+
+.card-biblioweb-sec {
+  background-color: var(--bw-surface-warm);
+  border: 1px solid var(--bw-borde);
+  border-radius: 8px;
+  color: var(--bw-text-main);
+}
+
+/* --------------------------------------------------------------------------
+   Botones
+   -------------------------------------------------------------------------- */
+.btn-primary,
+.btn-verde {
+  --bs-btn-bg: var(--bw-primary);
+  --bs-btn-border-color: var(--bw-primary);
+  --bs-btn-color: var(--bw-primary-text);
+  --bs-btn-hover-bg: var(--bw-primary-hover);
+  --bs-btn-hover-border-color: var(--bw-primary-hover);
+  --bs-btn-hover-color: #FFFFFF;
+  --bs-btn-active-bg: var(--bw-primary-hover);
+  --bs-btn-active-border-color: var(--bw-primary-hover);
+  --bs-btn-active-color: #FFFFFF;
+  font-weight: 600;
+}
+
+.btn-terracota,
+.btn-toffee,
+.btn-accent {
+  --bs-btn-bg: var(--bw-accent);
+  --bs-btn-border-color: var(--bw-accent);
+  --bs-btn-color: var(--bw-accent-text);
+  --bs-btn-hover-bg: var(--bw-accent-hover);
+  --bs-btn-hover-border-color: var(--bw-accent-hover);
+  --bs-btn-hover-color: var(--bw-accent-text);
+  --bs-btn-active-bg: var(--bw-accent-hover);
+  --bs-btn-active-border-color: var(--bw-accent-hover);
+  --bs-btn-active-color: var(--bw-accent-text);
+  font-weight: 600;
+}
+
+.btn-copper {
+  --bs-btn-bg: var(--bw-copper);
+  --bs-btn-border-color: var(--bw-copper);
+  --bs-btn-color: #2B1E16;
+  --bs-btn-hover-bg: var(--bw-copper-hover);
+  --bs-btn-hover-border-color: var(--bw-copper-hover);
+  --bs-btn-hover-color: #2B1E16;
+  font-weight: 600;
+}
+
+.btn-danger,
+.btn-burgundy {
+  --bs-btn-bg: var(--bw-danger);
+  --bs-btn-border-color: var(--bw-danger);
+  --bs-btn-color: #FFFFFF;
+  --bs-btn-hover-bg: var(--bw-danger-hover);
+  --bs-btn-hover-border-color: var(--bw-danger-hover);
+  --bs-btn-hover-color: #FFFFFF;
+  font-weight: 600;
+}
+
+.btn-outline-danger {
+  --bs-btn-color: var(--bw-danger);
+  --bs-btn-border-color: var(--bw-danger);
+  --bs-btn-hover-bg: var(--bw-danger);
+  --bs-btn-hover-border-color: var(--bw-danger);
+  --bs-btn-hover-color: #FFFFFF;
+}
+
+[data-bs-theme="dark"] .btn-outline-danger {
+  --bs-btn-color: #E08A92;
+  --bs-btn-border-color: #A8454F;
+}
+
+.btn-outline-coffee {
+  --bs-btn-color: var(--bw-primary);
+  --bs-btn-border-color: var(--bw-primary);
+  --bs-btn-hover-bg: var(--bw-primary);
+  --bs-btn-hover-border-color: var(--bw-primary);
+  --bs-btn-hover-color: var(--bw-primary-text);
+  font-weight: 600;
+}
+
+[data-bs-theme="dark"] .btn-outline-coffee {
+  --bs-btn-color: var(--bw-accent);
+  --bs-btn-border-color: var(--bw-accent);
+  --bs-btn-hover-bg: var(--bw-accent);
+  --bs-btn-hover-border-color: var(--bw-accent);
+  --bs-btn-hover-color: var(--bw-accent-text);
+}
+
+.btn-outline-secondary,
+.btn-outline-dark {
+  --bs-btn-color: var(--bw-text-sec);
+  --bs-btn-border-color: var(--bw-borde);
+  --bs-btn-hover-bg: var(--bw-surface-warm);
+  --bs-btn-hover-border-color: var(--bw-accent);
+  --bs-btn-hover-color: var(--bw-text-main);
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 0.25rem var(--bw-focus-ring);
+}
+
+/* --------------------------------------------------------------------------
+   Badges de categoría
+   -------------------------------------------------------------------------- */
+.badge-narrativa {
+  background-color: var(--color-tan);
+  color: #382417;
+  font-weight: 600;
+}
+
+.badge-tecnologia {
+  background-color: var(--color-faded-copper);
+  color: #2B1E16;
+  font-weight: 600;
+}
+
+.badge-ciencia {
+  background-color: var(--color-coffee-bean);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+[data-bs-theme="dark"] .badge-ciencia {
+  background-color: var(--color-toffee-brown);
+  color: #EDE0D4;
+}
+
+/* --------------------------------------------------------------------------
+   Formularios
+   -------------------------------------------------------------------------- */
+.form-control,
+.form-select {
+  background-color: var(--bw-input-bg);
+  border: 1px solid var(--bw-borde);
+  color: var(--bw-text-main);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--bw-input-bg);
+  color: var(--bw-text-main);
+  border-color: var(--bw-accent);
+  box-shadow: 0 0 0 0.25rem var(--bw-focus-ring);
+}
+
+.form-control::placeholder {
+  color: var(--bw-text-sec);
+  opacity: 0.6;
+}
+
+.form-check-input:checked {
+  background-color: var(--bw-primary);
+  border-color: var(--bw-primary);
+}
+
+.form-check-input:focus {
+  border-color: var(--bw-accent);
+  box-shadow: 0 0 0 0.25rem var(--bw-focus-ring);
+}
+
+/* --------------------------------------------------------------------------
+   Tablas
+   -------------------------------------------------------------------------- */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--bw-text-main);
+  --bs-table-border-color: var(--bw-borde);
+  --bs-table-hover-bg: var(--bw-surface-warm);
+  --bs-table-hover-color: var(--bw-text-main);
+}
+
+.table-light {
+  --bs-table-bg: var(--bw-surface-warm);
+  --bs-table-color: var(--bw-text-main);
+  --bs-table-border-color: var(--bw-borde);
+}
+
+/* --------------------------------------------------------------------------
+   Modales
+   -------------------------------------------------------------------------- */
+.modal-content {
+  background-color: var(--bw-surface-main);
+  border: 1px solid var(--bw-borde);
+  color: var(--bw-text-main);
+  box-shadow: 0 12px 36px var(--bw-shadow);
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--bw-borde);
+}
+
+/* --------------------------------------------------------------------------
+   Alertas, listas y fondos de Bootstrap que deben respetar la paleta
+   -------------------------------------------------------------------------- */
+.list-group-item {
+  background-color: transparent;
+  color: var(--bw-text-main);
+  border-color: var(--bw-borde);
+}
+
+.bg-body-secondary,
+.bg-secondary-subtle {
+  background-color: var(--bw-surface-warm) !important;
+  color: var(--bw-text-main);
+}
+
+.bg-primary {
+  background-color: var(--bw-primary) !important;
+  color: var(--bw-primary-text) !important;
+}

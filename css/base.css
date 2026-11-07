@@ -1,0 +1,176 @@
+/* ==========================================================================
+   BiblioWeb - css/base.css
+   Reglas base y tema compartido (claro / oscuro) para Bootstrap 5.3.
+   Aquí viven: paleta, variables de tema, tipografía y sobrescritura de
+   variables de Bootstrap. Los componentes están en componentes.css y los
+   ajustes propios del proyecto en estilos.css.
+
+   Orden de carga en cada página:
+   1. Bootstrap  2. base.css  3. componentes.css  4. estilos.css
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. Paleta (colores fijos, no cambian con el tema)
+   -------------------------------------------------------------------------- */
+:root {
+  --font-serif: 'Merriweather', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --color-almond-cream: #EDE0D4;
+  --color-pale-oak: #E6CCB2;
+  --color-tan: #DDB892;
+  --color-faded-copper: #B08968;
+  --color-coffee-bean: #7F5539;
+  --color-toffee-brown: #9C6644;
+  --color-deep-espresso: #382417;
+  --color-burdeos: #7A2E3A;
+}
+
+/* --------------------------------------------------------------------------
+   2. Tema claro (por defecto)
+   -------------------------------------------------------------------------- */
+:root,
+[data-bs-theme="light"] {
+  --bw-bg-page: var(--color-almond-cream);
+  --bw-surface-main: #FFFFFF;
+  --bw-surface-card: var(--color-pale-oak);
+  --bw-surface-warm: #F4EAE0;
+  --bw-input-bg: #FFFFFF;
+
+  --bw-text-main: var(--color-deep-espresso);
+  --bw-text-sec: #644937;
+  --bw-borde: var(--color-tan);
+
+  --bw-navbar-bg: var(--color-coffee-bean);
+  --bw-navbar-link: #EDE0D4;
+  --bw-navbar-link-hover: #FFFFFF;
+  --bw-navbar-border: var(--color-tan);
+
+  --bw-primary: var(--color-coffee-bean);
+  --bw-primary-hover: #69442B;
+  --bw-primary-text: #FFFFFF;
+
+  --bw-accent: var(--color-toffee-brown);
+  --bw-accent-hover: #865434;
+  --bw-accent-text: #FFFFFF;
+
+  --bw-copper: var(--color-faded-copper);
+  --bw-copper-hover: #9C7353;
+
+  --bw-danger: var(--color-burdeos);
+  --bw-danger-hover: #63222D;
+  --bw-exito: #456B3A;
+
+  --bw-link: var(--color-coffee-bean);
+  --bw-link-hover: #69442B;
+  --bw-focus-ring: rgba(127, 85, 57, 0.35);
+  --bw-shadow: rgba(56, 36, 23, 0.10);
+
+  /* Variables de Bootstrap 5.3 */
+  --bs-body-font-family: var(--font-sans);
+  --bs-body-bg: var(--bw-bg-page);
+  --bs-body-color: var(--bw-text-main);
+  --bs-secondary-color: var(--bw-text-sec);
+  --bs-border-color: var(--bw-borde);
+  --bs-tertiary-bg: var(--bw-surface-warm);
+  --bs-primary: var(--bw-primary);
+  --bs-primary-rgb: 127, 85, 57;
+  --bs-danger: var(--bw-danger);
+  --bs-danger-rgb: 122, 46, 58;
+  --bs-link-color: var(--bw-link);
+  --bs-link-hover-color: var(--bw-link-hover);
+}
+
+/* --------------------------------------------------------------------------
+   3. Tema oscuro "Café y roble" (sin negro puro)
+   -------------------------------------------------------------------------- */
+[data-bs-theme="dark"] {
+  --bw-bg-page: #1E1510;
+  --bw-surface-main: #2B1E16;
+  --bw-surface-card: #2B1E16;
+  --bw-surface-warm: #36261C;
+  --bw-input-bg: #1E1510;
+
+  --bw-text-main: #EDE0D4;
+  --bw-text-sec: #E6CCB2;
+  --bw-borde: #7F5539;
+
+  --bw-navbar-bg: #2B1E16;
+  --bw-navbar-link: #E6CCB2;
+  --bw-navbar-link-hover: #DDB892;
+  --bw-navbar-border: #7F5539;
+
+  --bw-primary: #9C6644;
+  --bw-primary-hover: #B0744F;
+  --bw-primary-text: #EDE0D4;
+
+  --bw-accent: #DDB892;
+  --bw-accent-hover: #E7C8A6;
+  --bw-accent-text: #1E1510;
+
+  --bw-copper: #B08968;
+  --bw-copper-hover: #C39976;
+
+  --bw-danger: #A8454F;
+  --bw-danger-hover: #BD535E;
+  --bw-exito: #5E9452;
+
+  --bw-link: #DDB892;
+  --bw-link-hover: #E7C8A6;
+  --bw-focus-ring: rgba(221, 184, 146, 0.55);
+  --bw-shadow: rgba(0, 0, 0, 0.35);
+
+  --bs-body-bg: var(--bw-bg-page);
+  --bs-body-color: var(--bw-text-main);
+  --bs-secondary-color: var(--bw-text-sec);
+  --bs-border-color: var(--bw-borde);
+  --bs-tertiary-bg: var(--bw-surface-card);
+  --bs-primary: var(--bw-primary);
+  --bs-primary-rgb: 156, 102, 68;
+  --bs-danger: var(--bw-danger);
+  --bs-danger-rgb: 168, 69, 79;
+  --bs-link-color: var(--bw-link);
+  --bs-link-hover-color: var(--bw-link-hover);
+}
+
+/* --------------------------------------------------------------------------
+   4. Tipografía y elementos base
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bw-bg-page);
+  color: var(--bw-text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, .font-serif, .navbar-brand {
+  font-family: var(--font-serif);
+}
+
+a {
+  color: var(--bw-link);
+}
+
+a:hover {
+  color: var(--bw-link-hover);
+}
+
+.text-secondary {
+  color: var(--bw-text-sec) !important;
+}
+
+.text-primary {
+  color: var(--bw-primary) !important;
+}
+
+[data-bs-theme="dark"] .text-primary {
+  color: var(--bw-accent) !important;
+}
+
+/* Foco visible en ambos temas */
+:focus-visible {
+  outline: 2px solid var(--bw-accent);
+  outline-offset: 2px;
+}

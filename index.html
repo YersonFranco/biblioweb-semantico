@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BiblioWeb - Biblioteca Cívica &amp; Archivo Municipal</title>
+
+  <!-- Bootstrap 5.3 CSS por CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Hoja de Estilos Institucional -->
+  <link href="css/base.css" rel="stylesheet">
+  <link href="css/componentes.css" rel="stylesheet">
+  <link href="css/estilos.css" rel="stylesheet">
+
+  <!-- Tema claro/oscuro (en el head para evitar parpadeo) -->
+  <script src="js/tema.js"></script>
+</head>
+<body>
+
+  <!-- Enlace de accesibilidad: solo se ve al navegar con teclado -->
+  <a class="visually-hidden-focusable" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- ==================== ENCABEZADO DEL SITIO ==================== -->
+  <!-- sticky-top va en el header (no en el nav) para que la barra se mantenga fija al hacer scroll -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-biblioweb py-2" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold text-white fs-4" href="index.html">
+          <svg aria-hidden="true" fill="none" height="28" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="28">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          BiblioWeb
+        </a>
+        <button aria-controls="navMenu" aria-expanded="false" aria-label="Navegación" class="navbar-toggler" data-bs-target="#navMenu" data-bs-toggle="collapse" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a aria-current="page" class="nav-link active" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/catalogo.html">Catálogo de Libros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#horarios">Horarios &amp; Contacto</a></li>
+          </ul>
+          <div class="d-flex align-items-center gap-3">
+            <!-- Selector Tema Claro / Oscuro -->
+            <button class="btn btn-outline-light rounded-circle p-2 lh-1" id="theme-toggle" style="width: 38px; height: 38px;" title="Alternar tema" type="button">
+              ☀️
+            </button>
+            <!-- Enlace de Acceso Admin -->
+            <a class="btn btn-terracota px-3 py-1" href="pages/login.html">Acceso Admin</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+  <main id="contenido-principal">
+
+    <!-- Título de la página (visible solo para lectores de pantalla) -->
+    <h1 class="visually-hidden">BiblioWeb: biblioteca cívica y archivo municipal</h1>
+
+    <!-- ==================== CARRUSEL PRINCIPAL ==================== -->
+    <section class="container my-4" aria-label="Destacados de la biblioteca">
+      <div class="carousel slide rounded-3 overflow-hidden shadow-sm" data-bs-ride="carousel" id="carouselBiblio">
+        <div class="carousel-indicators">
+          <button aria-current="true" aria-label="Diapositiva 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselBiblio" type="button"></button>
+          <button aria-label="Diapositiva 2" data-bs-slide-to="1" data-bs-target="#carouselBiblio" type="button"></button>
+          <button aria-label="Diapositiva 3" data-bs-slide-to="2" data-bs-target="#carouselBiblio" type="button"></button>
+        </div>
+        <div class="carousel-inner" style="max-height: 480px;">
+
+          <article class="carousel-item active">
+            <img alt="Gran sala de lectura" class="d-block w-100" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" style="height: 480px; object-fit: cover; filter: brightness(0.65);">
+            <div class="carousel-caption text-start pb-5">
+              <span class="badge bg-warning text-dark mb-2 px-3 py-1">PATRIMONIO CÍVICO</span>
+              <h2 class="display-5 fw-bold text-white font-serif">Espacios de Lectura y Estudio Conectado</h2>
+              <p class="lead text-light d-none d-md-block">Salas climatizadas con Wi-Fi de alta velocidad, colecciones digitalizadas y cubículos de concentración.</p>
+              <a class="btn btn-verde btn-lg me-2" href="pages/catalogo.html">Ver Catálogo de Libros</a>
+              <a class="btn btn-outline-light btn-lg" href="#horarios">Consultar Horarios</a>
+            </div>
+          </article>
+
+          <article class="carousel-item">
+            <img alt="Estanterías históricas de la biblioteca" class="d-block w-100" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" style="height: 480px; object-fit: cover; filter: brightness(0.65);">
+            <div class="carousel-caption text-start pb-5">
+              <span class="badge bg-warning text-dark mb-2 px-3 py-1">COLECCIÓN 2024</span>
+              <h2 class="display-5 fw-bold text-white font-serif">Más de 10,000 Obras a tu Alcance</h2>
+              <p class="lead text-light d-none d-md-block">Narrativa canónica, últimas publicaciones de ciencia, ingeniería de software e investigación histórica.</p>
+              <a class="btn btn-terracota btn-lg" href="pages/catalogo.html">Solicitar Préstamo</a>
+            </div>
+          </article>
+
+          <article class="carousel-item">
+            <img alt="Libros antiguos encuadernados" class="d-block w-100" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" style="height: 480px; object-fit: cover; filter: brightness(0.65);">
+            <div class="carousel-caption text-start pb-5">
+              <span class="badge bg-warning text-dark mb-2 px-3 py-1">ACTIVIDADES Y TALLERES</span>
+              <h2 class="display-5 fw-bold text-white font-serif">Archivo Histórico y Clubes de Lectura</h2>
+              <p class="lead text-light d-none d-md-block">Encuentros culturales quincenales, talleres de alfabetización digital y consulta de manuscritos.</p>
+              <a class="btn btn-verde btn-lg" href="#servicios">Explorar Servicios</a>
+            </div>
+          </article>
+
+        </div>
+        <button aria-label="Anterior" class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselBiblio" type="button">
+          <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+        </button>
+        <button aria-label="Siguiente" class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselBiblio" type="button">
+          <span aria-hidden="true" class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== BUSCADOR RÁPIDO ==================== -->
+    <section class="container my-5" aria-labelledby="titulo-busqueda">
+      <div class="card-biblioweb p-4">
+        <div class="row align-items-center g-3">
+          <div class="col-md-3">
+            <h2 class="h5 font-serif mb-0 text-primary" id="titulo-busqueda">Búsqueda en Sala</h2>
+            <small class="text-secondary">Consulta rápida del OPAC</small>
+          </div>
+          <div class="col-md-7" role="search">
+            <div class="input-group">
+              <input aria-label="Buscar libro" class="form-control" placeholder="Buscar por título, autor o materia (ej. García Márquez, Sagan...)" type="text">
+            </div>
+          </div>
+          <div class="col-md-2 d-grid">
+            <a class="btn btn-verde" href="pages/catalogo.html">Explorar Todo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICIOS ==================== -->
+    <section class="container my-5 py-3" id="servicios" aria-labelledby="titulo-servicios">
+      <header class="text-center mb-5">
+        <span class="text-uppercase fw-bold text-secondary small">Infraestructura Cívica</span>
+        <h2 class="font-serif display-6 fw-bold" id="titulo-servicios">Servicios para la Comunidad</h2>
+        <p class="text-secondary">Acceso libre y universal a recursos analógicos y digitales de vanguardia.</p>
+      </header>
+
+      <ul class="row g-4 list-unstyled mb-0">
+        <li class="col-md-6 col-lg-3">
+          <article class="card card-biblioweb h-100 p-4 text-center">
+            <div class="fs-1 mb-3" aria-hidden="true">📖</div>
+            <h3 class="h5 font-serif fw-bold">Préstamo Domiciliario</h3>
+            <p class="text-secondary small">Hasta 5 libros simultáneos por 15 días renovables mediante tu Carnet Cívico de lector.</p>
+          </article>
+        </li>
+        <li class="col-md-6 col-lg-3">
+          <article class="card card-biblioweb h-100 p-4 text-center">
+            <div class="fs-1 mb-3" aria-hidden="true">💻</div>
+            <h3 class="h5 font-serif fw-bold">Salas de Coworking</h3>
+            <p class="text-secondary small">Puestos electrificados individuales, conectividad por fibra óptica y cubículos silenciosos.</p>
+          </article>
+        </li>
+        <li class="col-md-6 col-lg-3">
+          <article class="card card-biblioweb h-100 p-4 text-center">
+            <div class="fs-1 mb-3" aria-hidden="true">🎓</div>
+            <h3 class="h5 font-serif fw-bold">Talleres Digitales</h3>
+            <p class="text-secondary small">Capacitación gratuita en programación, ofimática, seguridad informática y pensamiento crítico.</p>
+          </article>
+        </li>
+        <li class="col-md-6 col-lg-3">
+          <article class="card card-biblioweb h-100 p-4 text-center">
+            <div class="fs-1 mb-3" aria-hidden="true">🏛️</div>
+            <h3 class="h5 font-serif fw-bold">Hemeroteca &amp; Archivo</h3>
+            <p class="text-secondary small">Custodia de prensa histórica, boletines municipales del siglo XX y actas digitalizadas.</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== HORARIOS FICTICIOS Y UBICACIÓN ==================== -->
+    <section class="container my-5 py-4" id="horarios" aria-labelledby="titulo-horarios">
+      <div class="card-biblioweb p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+
+          <article class="col-lg-6">
+            <header>
+              <span class="badge bg-success-subtle text-success px-3 py-1 mb-2">ABIERTO HOY</span>
+              <h2 class="font-serif fw-bold display-6 mb-3" id="titulo-horarios">Horarios de Atención</h2>
+            </header>
+            <p class="text-secondary mb-4">La Biblioteca Central Municipal abre sus puertas de lunes a sábado con acceso libre y gratuito a todas las salas de lectura.</p>
+            <ul class="list-group list-group-flush mb-4">
+              <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent py-3">
+                <div>
+                  <strong>Lunes a Viernes</strong>
+                  <div class="small text-secondary">Jornada continuada en todas las salas</div>
+                </div>
+                <span class="badge bg-primary fs-6 px-3 py-2"><time datetime="08:30">08:30</time> – <time datetime="20:30">20:30</time> h</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent py-3">
+                <div>
+                  <strong>Sábados</strong>
+                  <div class="small text-secondary">Salas de lectura y préstamo express</div>
+                </div>
+                <span class="badge bg-secondary fs-6 px-3 py-2"><time datetime="09:00">09:00</time> – <time datetime="14:00">14:00</time> h</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent py-3">
+                <div>
+                  <strong>Domingos y Feriados</strong>
+                  <div class="small text-secondary">Buzón de devoluciones 24h activo</div>
+                </div>
+                <span class="badge bg-danger fs-6 px-3 py-2">Cerrado</span>
+              </li>
+            </ul>
+          </article>
+
+          <div class="col-lg-6">
+            <div class="card-biblioweb-sec p-4 h-100">
+              <h3 class="h5 font-serif fw-bold mb-3">Sede Institucional</h3>
+              <address class="mb-0">
+                <p class="text-secondary mb-2"><span aria-hidden="true">📍</span> <strong>Dirección:</strong> Av. de las Letras 1420, Barrio Cívico, CP 28001</p>
+                <p class="text-secondary mb-2"><span aria-hidden="true">📞</span> <strong>Teléfono de Referencia:</strong> +34 900 123 456</p>
+                <p class="text-secondary mb-4"><span aria-hidden="true">✉️</span> <strong>Correo Electrónico:</strong> consultas@biblioweb.org</p>
+              </address>
+              <aside class="alert alert-secondary d-flex align-items-center gap-2 mb-0" aria-label="Cómo llegar">
+                <span aria-hidden="true">🚌</span>
+                <small>Líneas de autobús: 12, 27, 45 y Metro L3 (Estación Cívica a 150m).</small>
+              </aside>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== PIE DE PÁGINA ==================== -->
+  <footer class="footer-biblioweb py-5 mt-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-lg-4">
+          <h2 class="h4 font-serif fw-bold text-white mb-3">BiblioWeb</h2>
+          <p class="text-white-50 small">Biblioteca pública y archivo histórico municipal. Fomentamos el libre acceso al conocimiento, la lectura crítica comunitaria y la preservación del patrimonio bibliográfico.</p>
+          <p class="small text-white-50 mb-0">© 2024 BiblioWeb. Red Cívica de Bibliotecas Públicas.</p>
+        </div>
+
+        <nav class="col-md-4 col-lg-2 offset-lg-2" aria-labelledby="pie-enlaces">
+          <h2 class="h6 text-uppercase text-warning fw-bold mb-3" id="pie-enlaces">Enlaces</h2>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="index.html">Inicio</a></li>
+            <li class="mb-2"><a href="pages/catalogo.html">Catálogo de Libros</a></li>
+            <li class="mb-2"><a href="#servicios">Servicios</a></li>
+            <li class="mb-2"><a href="#horarios">Horarios</a></li>
+          </ul>
+        </nav>
+
+        <nav class="col-md-4 col-lg-2" aria-labelledby="pie-gestion">
+          <h2 class="h6 text-uppercase text-warning fw-bold mb-3" id="pie-gestion">Gestión</h2>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="pages/login.html">Acceso Administrador</a></li>
+            <li class="mb-2"><a href="#">Reglamento de Sala</a></li>
+            <li class="mb-2"><a href="#">Privacidad y Datos</a></li>
+          </ul>
+        </nav>
+
+        <div class="col-md-4 col-lg-2">
+          <h2 class="h6 text-uppercase text-warning fw-bold mb-3">Contacto</h2>
+          <address class="mb-0">
+            <p class="small text-white-50 mb-1">Av. de las Letras 1420</p>
+            <p class="small text-white-50 mb-1">consultas@biblioweb.org</p>
+            <p class="small text-white-50">+34 900 123 456</p>
+          </address>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 Bundle JS por CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts Propios -->
+  <script src="js/auth.js"></script>
+</body>
+</html>

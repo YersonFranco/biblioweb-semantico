@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="420" viewBox="0 0 300 420" role="img" aria-label="Portada de Cosmos">
+  <rect width="300" height="420" fill="#382417"/>
+  <rect x="14" y="14" width="272" height="392" fill="none" stroke="#DDB892" stroke-width="2"/>
+  <text x="150" y="190" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#EDE0D4"><tspan x="150" dy="0">Cosmos</tspan></text>
+  <line x1="90" y1="300" x2="210" y2="300" stroke="#DDB892" stroke-width="2"/>
+  <text x="150" y="335" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#E6CCB2">Carl Sagan</text>
+</svg>
